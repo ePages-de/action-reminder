@@ -1,4 +1,7 @@
 name: 'Reminder'
+outputs:
+  should_skip:
+     description: 'Whether the current week type should be skipped'
 runs:
   using: 'docker'
   image: 'Dockerfile'

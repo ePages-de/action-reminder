@@ -12,4 +12,4 @@ if [[ "${VALID_WEEK_TYPE}" == "odd" || "${VALID_WEEK_TYPE}" == "even" ]]; then
     SHOULD_SKIP=1
   fi
 fi
-echo $SHOULD_SKIP"
+echo "::set-output name=should_skip::${SHOULD_SKIP}"
