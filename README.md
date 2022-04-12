@@ -11,15 +11,15 @@ on:
 jobs:
   reminder:
     runs-on: ubuntu-latest
-    env:
-      VALID_WEEK_TYPE: odd
     steps:
       - name: Evaluate week type
         uses: ePages-de/reminder-action@master
         id: week_filter
-      - name: Conditional step
-        if: ${{ steps.week_filter.outputs.should_skip }} == 0
-        run: echo This was allowed to run.
+        with:
+          valid_week_type: even
+      - name: Trigger reminder
+        if: ${{ steps.week_filter.outputs.should_skip == 'no' }}
+        run: echo "Triggering..."
 ```
 
 This job sends regular Mattermost notifications, based on the cron schedule.
