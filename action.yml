@@ -1,11 +1,4 @@
 name: 'Reminder'
-outputs:
-
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-
-name: 'Reminder'
 
 inputs:
   valid_week_type:
