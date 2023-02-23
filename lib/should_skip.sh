@@ -20,4 +20,4 @@ if [[ "${INPUT_VALID_WEEK_TYPE}" == "odd" || "${INPUT_VALID_WEEK_TYPE}" == "even
     SHOULD_SKIP=yes
   fi
 fi
-echo "::set-output name=should_skip::${SHOULD_SKIP}"
+echo "should_skip=${SHOULD_SKIP}" >> $GITHUB_OUTPUT
